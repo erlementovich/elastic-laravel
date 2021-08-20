@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d056dce371b726c53a5528e31a96fdd1",
+    "content-hash": "a8af56246d366d8a71b418d5e53551e5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1054,74 +1054,6 @@
                 "source": "https://github.com/guzzle/psr7/tree/2.0.0"
             },
             "time": "2021-06-30T20:03:07+00:00"
-        },
-        {
-            "name": "jeroen-g/explorer",
-            "version": "v2.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Jeroen-G/Explorer.git",
-                "reference": "aef892ae6181fc18a444b8054121dfecfba32337"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Jeroen-G/Explorer/zipball/aef892ae6181fc18a444b8054121dfecfba32337",
-                "reference": "aef892ae6181fc18a444b8054121dfecfba32337",
-                "shasum": ""
-            },
-            "require": {
-                "elasticsearch/elasticsearch": "^7.9",
-                "illuminate/support": "~7|~8",
-                "laravel/scout": "~8|~9",
-                "php": "^7.4|^8.0",
-                "webmozart/assert": "^1.9"
-            },
-            "require-dev": {
-                "infection/infection": "^0.20",
-                "mockery/mockery": "^1.4",
-                "orchestra/testbench": "~6",
-                "phpunit/phpunit": "~9.0",
-                "symplify/easy-coding-standard": "^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "JeroenG\\Explorer\\ExplorerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "JeroenG\\Explorer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "EUPL-1.2"
-            ],
-            "authors": [
-                {
-                    "name": "Jeroen",
-                    "email": "jeroengjeroeng@gmail.com",
-                    "homepage": "https://jeroeng.dev"
-                }
-            ],
-            "description": "Next-gen Elasticsearch driver for Laravel Scout.",
-            "homepage": "https://jeroen-g.github.io/Explorer/",
-            "keywords": [
-                "elastic",
-                "elasticsearch",
-                "explorer",
-                "laravel",
-                "scout",
-                "search"
-            ],
-            "support": {
-                "issues": "https://github.com/Jeroen-G/Explorer/issues",
-                "source": "https://github.com/Jeroen-G/Explorer/tree/v2.3.0"
-            },
-            "time": "2021-06-23T14:25:10+00:00"
         },
         {
             "name": "laravel/framework",
@@ -5461,6 +5393,69 @@
                 }
             ],
             "time": "2021-07-27T01:56:02+00:00"
+        },
+        {
+            "name": "tamayo/laravel-scout-elastic",
+            "version": "8.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ErickTamayo/laravel-scout-elastic.git",
+                "reference": "004c8fc0088bce96fde90bedca9c43346ce0bd3f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ErickTamayo/laravel-scout-elastic/zipball/004c8fc0088bce96fde90bedca9c43346ce0bd3f",
+                "reference": "004c8fc0088bce96fde90bedca9c43346ce0bd3f",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/scout": "^8.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "elasticsearch/elasticsearch": "^7.9",
+                "fzaninotto/faker": "~1.9.1",
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^8.0|^9.3"
+            },
+            "suggest": {
+                "elasticsearch/elasticsearch": "Required to use the Elasticsearch engine (^7.9.0)."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tamayo\\LaravelScoutElastic\\LaravelScoutElasticProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tamayo\\LaravelScoutElastic\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Erick Tamayo",
+                    "email": "ericktamayo@gmail.com"
+                }
+            ],
+            "description": "Elastic Driver for Laravel Scout",
+            "keywords": [
+                "elastic",
+                "elasticsearch",
+                "laravel",
+                "scout"
+            ],
+            "support": {
+                "issues": "https://github.com/ErickTamayo/laravel-scout-elastic/issues",
+                "source": "https://github.com/ErickTamayo/laravel-scout-elastic/tree/8.0.2"
+            },
+            "time": "2020-12-14T17:41:23+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

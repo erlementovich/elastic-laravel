@@ -30,10 +30,5 @@ class ArticleRepository implements ArticleRepositoryInterface
     public function search(string $query = '')
     {
         return $this->article->search($query)->get();
-//        return $this->article
-//            ->query()
-//            ->where('body', 'like', "%{$query}%")
-//            ->orWhere('title', 'like', "%{$query}%")
-//            ->get();
     }
 }

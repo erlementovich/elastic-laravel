@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver' => env('SCOUT_DRIVER', 'elastic'),
+    'driver' => env('SCOUT_DRIVER', 'elasticsearch'),
 
     /*
     |--------------------------------------------------------------------------
@@ -133,5 +133,19 @@ return [
         'host' => env('MEILISEARCH_HOST', 'http://localhost:7700'),
         'key' => env('MEILISEARCH_KEY', null),
     ],
+
+    'elasticsearch' => [
+        'hosts' => [
+            env('ELASTICSEARCH_HOSTS', 'localhost'),
+            // [
+            //     'host'   => env('ELASTICSEARCH_HOST', 'localhost'),
+            //     'port'   => env('ELASTICSEARCH_PORT', '9200'),
+            //     'scheme' => env('ELASTICSEARCH_SCHEME', 'https'),
+            //     'path'   => env('ELASTICSEARCH_PATH', '/elastic'),
+            //     'user'   => env('ELASTICSEARCH_USER', 'username'),
+            //     'pass'   => env('ELASTICSEARCH_PASS', 'password'),
+            // ]
+        ],
+    ]
 
 ];
