@@ -15,9 +15,11 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
-
         $articles = Article::factory(100)->create();
-        $tags = Tag::factory(40)->create();
+        $tags = collect();
+        foreach ($this->getTags() as $tag) {
+            $tags->push(Tag::factory()->create(['name' => $tag]));
+        }
 
         foreach ($articles as $article) {
             $randomTags = $tags->random(rand(2, 6));
@@ -26,5 +28,37 @@ class ArticleSeeder extends Seeder
                 $article->tags()->save($tag);
             });
         }
+    }
+
+    public function getTags()
+    {
+        return [
+            'Ягода',
+            'Природа',
+            'Погода',
+            'Азбука',
+            'Жизнь',
+            'Деньги',
+            'Работа',
+            'Учеба',
+            'Образование',
+            'Скандал',
+            'Машина',
+            'Книги',
+            'Самолеты',
+            'Фрукты',
+            'Здоровое питание',
+            'Информатика',
+            'География',
+            'Физика',
+            'Последовательности',
+            'Иерархия',
+            'Крик',
+            'Посольство',
+            'Генератор массивов',
+            'Интернатура',
+            'Аспирантура',
+            'Квадратура круга'
+        ];
     }
 }

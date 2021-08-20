@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
-use App\Traits\Searchable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use JeroenG\Explorer\Application\Explored;
+use Laravel\Scout\Searchable;
 
-class Article extends Model
+class Article extends Model implements Explored
 {
     use HasFactory, Searchable;
 
@@ -22,5 +23,14 @@ class Article extends Model
     public function author()
     {
         return $this->belongsTo(Author::class);
+    }
+
+    public function mappableAs(): array
+    {
+        return [
+            'title' => 'keyword',
+            'body' => 'text',
+            'created_at' => 'date',
+        ];
     }
 }

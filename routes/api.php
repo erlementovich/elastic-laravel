@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'api/authors'], function () {
+Route::group(['prefix' => 'authors'], function () {
     Route::get('/', [AuthorController::class, 'index']);
     Route::get('{id}', [AuthorController::class, 'show']);
     Route::post('/', [AuthorController::class, 'create']);

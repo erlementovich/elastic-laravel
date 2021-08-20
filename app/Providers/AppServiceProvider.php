@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Interfaces\ArticleRepositoryInterface;
 use App\Interfaces\AuthorRepositoryInterface;
+use App\Models\Article;
 use App\Repositories\ArticleElasticRepository;
 use App\Repositories\ArticleRepository;
 use App\Repositories\AuthorRepository;
