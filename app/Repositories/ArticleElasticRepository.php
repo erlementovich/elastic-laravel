@@ -35,6 +35,7 @@ class ArticleElasticRepository implements ArticleRepositoryInterface
             'index' => $this->article->getSearchIndex(),
             'type' => $this->article->getSearchType(),
             'body' => [
+                'size' => 10,
                 'query' => [
                     'multi_match' => [
                         'fields' => ['title^5', 'body'],
@@ -56,6 +57,7 @@ class ArticleElasticRepository implements ArticleRepositoryInterface
             'index' => $this->article->getSearchIndex(),
             'type' => $this->article->getSearchType(),
             'body' => [
+                'size' => 20,
                 'query' => [
                     'match_all' => (object)[]
                 ],
