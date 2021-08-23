@@ -27,7 +27,8 @@ trait Searchable
     {
         return [
             'title' => $this->title,
-            'body' => $this->body
+            'body' => $this->body,
+            'updated_at' => $this->updated_at,
         ];
     }
 }
