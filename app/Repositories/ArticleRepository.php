@@ -19,7 +19,7 @@ class ArticleRepository implements ArticleRepositoryInterface
 
     public function all()
     {
-        return $this->article->get();
+        return $this->article->paginate(10);
     }
 
     public function find($id)
