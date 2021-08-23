@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use Elasticsearch\Client;
+use Illuminate\Support\Facades\Log;
 
 class ElasticsearchObserver
 {
@@ -21,6 +22,8 @@ class ElasticsearchObserver
             'id' => $model->getKey(),
             'body' => $model->toSearchArray(),
         ]);
+
+        Log::info('Сохранено');
     }
 
     public function deleted($model)
