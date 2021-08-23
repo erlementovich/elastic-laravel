@@ -29,6 +29,9 @@ trait Searchable
             'title' => $this->title,
             'body' => $this->body,
             'updated_at' => $this->updated_at,
+            'is_published' => (boolean)$this->is_published,
+            'author' => $this->author,
+            'tags' => $this->tags,
         ];
     }
 }

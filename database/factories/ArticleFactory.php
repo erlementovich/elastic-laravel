@@ -13,9 +13,10 @@ class ArticleFactory extends Factory
     public function definition(): array
     {
     	return [
-    	    'title' => $this->faker->text(35),
+    	    'title' => $this->faker->realText(35),
             'body' => $this->faker->realText(300),
-            'author_id' => Author::factory()
+            'author_id' => Author::factory(),
+            'is_published' => $this->faker->boolean(),
     	];
     }
 }

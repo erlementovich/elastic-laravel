@@ -12,7 +12,7 @@ class TagFactory extends Factory
     public function definition(): array
     {
     	return [
-    	    'name' => $this->faker->text(15)
+    	    'name' => $this->faker->realText(15)
     	];
     }
 }

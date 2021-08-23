@@ -36,11 +36,26 @@ class ArticleElasticRepository implements ArticleRepositoryInterface
             'type' => $this->article->getSearchType(),
             'body' => [
                 'size' => 10,
-                'query' => [
-                    'multi_match' => [
-                        'fields' => ['title^5', 'body'],
-                        'query' => $query,
+                'highlight' => [
+                    'fields' => [
+                        '*' => (object)[],
                     ],
+                ],
+                'query' => [
+                    'bool' => [
+                        'filter' => [
+                            'term' => [
+                                'is_published' => true
+                            ]
+                        ],
+                        'must' => [
+                            'multi_match' => [
+                                'fields' => ['title^5', 'body', 'tags.name', 'author.name'],
+                                'query' => $query,
+                                'fuzziness' => 'AUTO',
+                            ]
+                        ]
+                    ]
                 ],
             ],
         ]);
@@ -67,6 +82,7 @@ class ArticleElasticRepository implements ArticleRepositoryInterface
 
     private function buildCollection(array $items)
     {
+        dd($items['hits']);
         $ids = Arr::pluck($items['hits']['hits'], '_id');
         return Article::findMany($ids)
             ->sortBy(function ($article) use ($ids) {

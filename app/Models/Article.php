@@ -11,7 +11,7 @@ class Article extends Model
     use HasFactory, Searchable;
 
     protected $fillable = [
-        'title', 'body'
+        'title', 'body', 'is_published'
     ];
 
     public function tags()

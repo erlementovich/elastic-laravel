@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('body');
+            $table->boolean('is_published')->default(false);
             $table->unsignedBigInteger('author_id');
 
             $table->foreign('author_id')->references('id')->on('authors');
